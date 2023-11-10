@@ -1,0 +1,50 @@
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Link from 'next/link'
+
+import Courses from './Courses/page'
+import Schedule from './Schedule/page'
+import Faculty from './Faculty/page'
+import Request from './Request/page'
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
+  title: 'Engineering Wallah',
+  description: 'Online Lecture Scheduling System',
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <section className='body'>
+          <div className='nav'>
+            <li className=''>
+              <Link href='/'>Lecture Scheduling System</Link>
+            </li>
+            <div className='profile'>
+              <div>Faculty Name</div>
+              <div className='circleAvatar'>
+                <img src='cat.jpg' />
+              </div>
+            </div>
+
+          </div>
+          <div className='main'>
+            <div className='left-nav'>
+              <div><Link href='/Courses'>Courses</Link></div>
+              <div><Link href='/Faculty'>Faculty</Link></div>
+              <div><Link href='/Schedule'>Schedule</Link></div>
+              <div><Link href='/Request'>Request</Link></div>
+            </div>
+            <div className='right-data'>
+              {children}
+            </div>
+          </div>
+
+        </section>
+      </body>
+    </html>
+  );
+}
+
