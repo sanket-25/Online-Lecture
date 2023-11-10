@@ -6,6 +6,7 @@ export default function Courses() {
     const [title, setTitle] = useState("")
     const [level, setLevel] = useState("")
     const [desc, setDesc] = useState("")
+    const [img, setImg] = useState("")
     const [mainCourse, setMainCourse] = useState([])
 
     const submitHandler = (e) => {
@@ -13,16 +14,18 @@ export default function Courses() {
         console.log(title)
         console.log(level)
         console.log(desc)
-        setMainCourse([...mainCourse, { title, level, desc }])
+        console.log(img)
+        setMainCourse([...mainCourse, { title, level, desc, img }])
         console.log(mainCourse)
         setTitle("")
         setLevel("")
         setDesc("")
+        setImg("")
     }
 
     const deleteHandler = (i) => {
         let copyCourse = [...mainCourse]
-        copyCourse.splice(i, 2)
+        copyCourse.splice(i, 3)
         setMainCourse(copyCourse)
 
     }
@@ -34,7 +37,7 @@ export default function Courses() {
             return (
                 <div className='course-list'>
                     <li key={i} className=''>
-                        <img src='cat.jpg' />
+                        <img src={t.img} />
                         <h5>{t.title}</h5>
                         <h6>{t.level}</h6>
                         <h6>{t.desc}</h6>
@@ -74,15 +77,23 @@ export default function Courses() {
                         className=''
                         value={level}
                         onChange={(e) => {
-                            setDesc(e.target.value)
+                            setLevel(e.target.value)
                         }}
                     />
                     <input type='text'
-                        placeholder='Enter Course Level'
+                        placeholder='Enter Course Description'
                         className=''
                         value={desc}
                         onChange={(e) => {
                             setDesc(e.target.value)
+                        }}
+                    />
+                    <input type='file'
+                        placeholder='Image'
+                        className=''
+                        value={img}
+                        onChange={(e) => {
+                            setImg(e.target.value)
                         }}
                     />
                     <button

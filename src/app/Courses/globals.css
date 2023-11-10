@@ -32,5 +32,28 @@
     border-top-right-radius: 1vw;
     border-bottom-left-radius: 1vw;
     border: solid black 1px;
-    
+
+}
+
+.right-form form {
+    /* justify-content: center; */
+}
+
+.right-form form input {
+    position: relative;
+    left: 1vw;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+
+
+button {
+    background-color: black;
+    color: white;
+    padding: 1vw 2vw;
+    position: relative;
+    left: 1vw;
 }

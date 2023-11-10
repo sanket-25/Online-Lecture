@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
               <Link href='/'>Lecture Scheduling System</Link>
             </li>
             <div className='profile'>
-              <div>Faculty Name</div>
+              <div>Admin</div>
               <div className='circleAvatar'>
                 <img src='cat.jpg' />
               </div>
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
               <div><Link href='/Courses'>Courses</Link></div>
               <div><Link href='/Faculty'>Faculty</Link></div>
               <div><Link href='/Schedule'>Schedule</Link></div>
-              <div><Link href='/Request'>Request</Link></div>
+              <div><Link href='/Schedule'>Request</Link></div>
             </div>
             <div className='right-data'>
               {children}
