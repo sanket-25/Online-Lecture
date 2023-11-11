@@ -9,7 +9,7 @@ import Request from './Request/page'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Engineering Wallah',
+  title: 'Lecture Scheduling',
   description: 'Online Lecture Scheduling System',
 }
 

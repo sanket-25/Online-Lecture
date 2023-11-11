@@ -9,6 +9,18 @@ export default function Courses() {
     const [img, setImg] = useState("")
     const [mainCourse, setMainCourse] = useState([])
 
+    const addProduct = async () => {
+        console.log(name,price,color);
+        let result = await fetch("http://localhost:3000/Courses",{
+            method: "POST",
+            body:JSON.stringify({name,price,color})
+        });
+        result = await result.json();
+        if(result.success){
+            alert("new course added")
+        }
+    }
+
     const submitHandler = (e) => {
         e.preventDefault()
         console.log(title)
@@ -29,30 +41,27 @@ export default function Courses() {
         setMainCourse(copyCourse)
 
     }
-
-    let renderCourse = <h2>No Course Available</h2>
-
+    let renderCourse =
+        <div className='no-render'><h2>No Course Available</h2></div>
     if (mainCourse.length > 0) {
         renderCourse = mainCourse.map((t, i) => {
             return (
                 <div className='course-list'>
-                    <li key={i} className=''>
-                        <img src={t.img} />
+                    <li key={i} className='li-li-c'>
                         <h5>{t.title}</h5>
                         <h6>{t.level}</h6>
                         <h6>{t.desc}</h6>
-
                         <button
                             onClick={() => { deleteHandler(i) }}
-                            className=''>Delete</button>
+                            className=''>Delete
+                        </button>
+                        <img src={t.img} />
                         <br />
                     </li>
                 </div>
-
             );
         })
     }
-
     return (
         <>
             <section className='center-data'>
