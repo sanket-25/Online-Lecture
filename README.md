@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -23,5 +21,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## Links
 
 /Courses -> List of all courses, could be added or deleted as well
+
 /Faculty -> List of all instructors, could be modified as well
+
 /Schedule -> Integrated Google Calendar
